@@ -17,22 +17,25 @@ export class ProductController implements ProdutoRepository {
     }
   }
   consultarProdutos(idProduto: number): void {
-    let resBusca = this.buscarNoArray(idProduto)
+    let resBusca = this.buscarNoArray(idProduto);
 
-    if (resBusca != null) console.log(resBusca.visualizar());
-    else console.log("Produto não encontrado!");
+    if (resBusca !== null) {
+      resBusca.visualizar();
+    } else {
+      console.log("Produto não encontrado!");
+    }
   }
   atualizarProduto(idProduto: number, novoProduto: Produto): void {
     let resBusca = this.buscarNoArray(idProduto);
 
     if (resBusca != null) {
-      this.deletarProduto(idProduto)
+      this.deletarProduto(idProduto);
 
-      this.criarProduto(novoProduto)
+      this.criarProduto(novoProduto);
 
       console.log("Produto atualizado");
-    }else{
-        console.log("Produto não encontrado!")
+    } else {
+      console.log("Produto não encontrado!");
     }
   }
   deletarProduto(idProduto: number): void {
@@ -47,7 +50,7 @@ export class ProductController implements ProdutoRepository {
   }
 
   public gerarId(): number {
-    return ++this.id;
+    return ++ this.id;
   }
 
   public buscarNoArray(id: number): Produto | null {

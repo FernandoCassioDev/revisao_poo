@@ -11,7 +11,7 @@ let continuar = true;
 while (true) {
   console.log(
     colors.fg.magentastrong,
-    "******************************************"
+    "****************************************"
   );
   console.log("                                         ");
   console.log("            FARMACIA CASSIO              ");

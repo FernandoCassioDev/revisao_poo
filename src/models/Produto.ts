@@ -44,11 +44,22 @@ export abstract class Produto {
   }
 
   public visualizar() {
+    let tipo: string = ""
+
+    switch(this._tipo){
+      case 1:
+        tipo = "Medicamento"
+        break;
+      case 2:
+        tipo = "Cosmético"
+        break;  
+    }
+
     console.log("******************************");
     console.log("\nDados dos produtos");
     console.log(`ID: ${this._id}`);
     console.log(`Nome: ${this._nome}`);
-    console.log(`Tipo: ${this._tipo}`);
+    console.log(`Tipo: ${tipo}`);
     console.log(`Preço: ${this._preco.toFixed(2)}`);
   }
 }
